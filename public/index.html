@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <titile>ping-pp test</title>
+  <meta charset="utf-8">
+
+  <script src="js/pingpp-pc.js"></script>
+  <script src="js/jquery.js"></script>
+  <script>
+    $(function(){
+
+      function sendCharge() {
+        $.ajax({
+          method: 'GET',
+          url: '/charge',
+          success: function(data){
+            console.log(data);
+            pingppPc.createPayment(data, function(result, err){
+              console.log(result);
+              console.log(err);
+            });
+          }
+        })
+        console.log(11);
+        charge = {};
+        pingppPc.createPayment(charge, function(result, err){
+        });
+      }
+
+      $('#btn').on('click', sendCharge);
+    })
+  </script>
+</head>
+
+<body>
+  <h1>ping-pp test</h1>
+  <hr>
+  <button id="btn">click me</button>
+</body>
+</html>
