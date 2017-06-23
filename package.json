@@ -11,6 +11,6 @@
   "dependencies": {
     "body-parser": "^1.14.2",
     "express": "^4.13.3",
-    "pingpp": "^2.0.6"
+    "pingpp": "^2.0.13"
   }
 }
